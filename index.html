@@ -24,11 +24,13 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <form onsubmit="app.carsController.search()">
-            <input type="text" id="search-make" required>
-            <p><sup><small>Comma seperate multiple makes</small></sup></p>
-            <button>search</button>
+        <div class="col-12 d-flex">
+          <form class="d-flex m-2 align-items-start" onsubmit="app.carsController.search()">
+            <div class="m-2">
+              <input type="text" id="search-make" required>
+              <p><sup><small>Comma seperate multiple makes</small></sup></p>
+            </div>
+            <button class="btn btn-danger m-2">search</button>
           </form>
         </div>
         <div class="col-12">
@@ -44,9 +46,10 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <ul class="list-group p-5 bg-danger" data-bs-dismiss="offcanvas">
+      <ul class="list-group p-5" data-bs-dismiss="offcanvas">
         <li class="list-group-item nav-link" onclick="app.carsController.drawCars()">Cars</li>
         <li class="list-group-item nav-link" onclick="app.housesController.drawHouses()">Houses</li>
+        <li class="list-group-item nav-link" onclick="app.jobsController.drawJobs()">Jobs</li>
       </ul>
     </div>
   </div>

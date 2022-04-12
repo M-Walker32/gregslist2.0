@@ -5,15 +5,12 @@ import { Pop } from "../Utils/Pop.js"
 
 function _drawCars() {
   let carsCardsTemplate = ''
-
   ProxyState.cars.forEach(car => carsCardsTemplate += car.CardTemplate)
-
   document.getElementById('listings').innerHTML = `
     <div class="row cars">
       ${carsCardsTemplate}
     </div>
   `
-
   document.getElementById('listing-modal-form-slot').innerHTML = getCarform()
   document.getElementById('add-listing-modal-label').innerText = 'Add Car 🚗'
 }
@@ -56,10 +53,6 @@ export class CarsController {
         formData.id = id
         await carsService.editCar(formData)
       }
-
-
-
-
       formElem.reset()
       // @ts-ignore
       bootstrap.Modal.getOrCreateInstance(document.getElementById('add-listing-modal')).hide()

@@ -1,21 +1,29 @@
 import { Car } from "./Models/Car.js"
+import { House } from "./Models/House.js"
+import { Job } from "./Models/Job.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
+
+  /** @type {import('./Models/Job').Job[]} */
+  jobs = []
+
+  /** @type {import('./Models/House').House[]} */
   houses = []
+
   /** @type {import('./Models/Car').Car[]} */
   cars = [
-    new Car({
-      color: 'red',
-      description: 'This is my test car',
-      img: 'https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/03/1988_Accord_3rd_Generation.jpg?resize=980:*',
-      make: 'Honda',
-      model: 'Accord',
-      mileage: '289000',
-      price: 5500,
-      year: 1988
-    })
+    // new Car({
+    //   color: 'red',
+    //   description: 'This is my test car',
+    //   img: 'https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/03/1988_Accord_3rd_Generation.jpg?resize=980:*',
+    //   make: 'Honda',
+    //   model: 'Accord',
+    //   mileage: '289000',
+    //   price: 5500,
+    //   year: 1988
+    // })
   ]
 }
 

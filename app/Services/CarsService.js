@@ -8,6 +8,7 @@ class CarsService {
     // Gets have an optional 2nd parameter that takes a query
     // that argument must be an object, with a property called params, that also must be an object
     const res = await sandboxApi.get('cars', { params })
+    // console.log(res)
     const cars = res.data.map(c => new Car(c))
     ProxyState.cars = cars
   }
@@ -30,7 +31,6 @@ class CarsService {
     ProxyState.cars = ProxyState.cars
 
   }
-
 
   async removeCar(id) {
     // NOTE deletes only take one argument
